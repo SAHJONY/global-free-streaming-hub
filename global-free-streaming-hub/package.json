@@ -1,25 +1,14 @@
 {
-  "name": "global-free-streaming-hub",
-  "version": "2.0.0",
-  "description": "Advanced AI-powered global streaming platform with cinematic quality",
+  "name": "Deployment Fix Tool",
+  "version": "1.0.0",
+  "description": "Tool to fix Vercel deployment issues for static sites",
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
-    "dev": "node index.js",
-    "build": "echo 'Building platform...'"
+    "fix-deployment": "node fix-deployment.js",
+    "test": "node test.js"
   },
   "dependencies": {
-    "express": "^4.18.2",
-    "cors": "^2.8.5",
-    "helmet": "^7.1.0"
-  },
-  "keywords": [
-    "streaming",
-    "ai",
-    "platform",
-    "cinematic",
-    "global"
-  ],
-  "author": "Global Free Streaming Hub",
-  "license": "MIT"
+    "vercel": "^1.0.0"
+  }
 }
