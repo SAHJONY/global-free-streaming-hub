@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Global Free Streaming Hub</title>
+    <style>
+        :root {
+            --primary-dark: #0a0a1a;
+            --primary-darker: #000000;
+            --primary-light: #1a1a2e;
+            --accent-neon-blue: #00eeff;
+            --accent-neon-green: #00ffaa;
+            --text-light: #ffffff;
+            --text-gray: #aaaaaa;
+            --glass-bg: rgba(255, 255, 255, 0.05);
+            --glass-border: rgba(255, 255, 255, 0.1);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary-light) 100%);
+            color: var(--text-light);
+            min-height: 100vh;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        // Global state for our streaming hub
+        let currentView = 'home';
+        
+        // Function to handle the start streaming button
+        function startStreaming() {
+            alert('Welcome to Global Free Streaming Hub!\\n\\nEnjoy your cinematic experience.');
+            document.getElementById('featuresSection').style.display = 'grid';
+        }
+        
+        // Function to handle search
+        function searchContent() {
+            const searchTerm = document.getElementById('searchInput').value.toLowerCase();
+            const contentSection = document.getElementById('contentSection');
+            contentSection.style.display = 'block';
+            return false; // prevent form submission
+        }
+        
+        // Function to show content
+        function showContent() {
+            document.getElementById('contentSection').style.display = 'block';
+        }
+        
+        // Function to hide content
+        function hideContent() {
+            document.getElementById('contentSection').style.display = 'none';
+        }
+    </script>
+    
+    <div class="hero">
+        <h1>GLOBAL STREAM HUB</h1>
+        <p>Experience the world's most advanced AI-powered streaming platform with cinematic quality and global content discovery</p>
+        <button class="cta-button" onclick="startStreaming()">START STREAMing NOW</button>
+        <input type="text" id="searchInput" placeholder="Search for content..." oninput="searchContent()">
+    </div>
+    
+    <div class="features" id="featuresSection" style="display: none;">
+        <div class="feature-card">
+            <div>8K CINEMATIC QUALITY</div>
+            <div>AI-POWERED DISCOVERY</div>
+            <div>GLOBAL CONTENT LIBRARY</div>
+        </div>
+    </div>
+    
+    <div class="ai-agents" id="aiAgentsSection" style="display: none;">
+        <div class="agent-card">
+            <h3>CONTENT CURATOR AI</h3>
+            <p>Discovers and organizes global content based on your preferences</p>
+        </div>
+        <div class="agent-card">
+            <h3>QUALITY ASSURANCE AI</h3>
+            <p>Ensures all content meets our cinematic quality standards</p>
+        </div>
+    </div>
+    
+    <div id="contentSection" style="display: none;">
+        <div class="content-grid">
+            <div class="content-item">
+                <h4>Global Adventure</h4>
+                <p>2026 • Global</p>
+            </div>
+        </div>
+    </div>
+    
+    <footer>
+        <p>© 2026 Global Free Streaming Hub</p>
+    </footer>
+</body>
+</html>
+</file>

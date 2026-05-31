@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Global Free Streaming Hub</title>
+    <script src="frontend/js/hermes-client.js"></script>
     <style>
         :root {
             --primary-dark: #0a0a1a;
@@ -28,6 +29,8 @@
             background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary-light) 100%);
             color: var(--text-light);
             min-height: 100vh;
+            margin: 0;
+            padding: 0;
         }
         
         .hero {
@@ -49,6 +52,22 @@
             border-radius: 50px;
             cursor: pointer;
             margin: 1rem;
+        }
+        
+        .search-container {
+            margin: 2rem auto;
+            max-width: 600px;
+            padding: 1rem;
+        }
+        
+        .search-box {
+            width: 100%;
+            padding: 1rem;
+            border-radius: 8px;
+            border: 1px solid var(--glass-border);
+            background: var(--glass-bg);
+            color: var(--text-light);
+            font-size: 1rem;
         }
         
         .features {
@@ -81,72 +100,100 @@
             text-align: center;
         }
         
-        .content-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 1rem;
-            padding: 2rem;
-        }
-        
-        .content-item {
-            background: var(--glass-bg);
-            border: 1px solid var(--glass-border);
-            border-radius: 8px;
-            padding: 1rem;
-            text-align: center;
-        }
-        
         footer {
             text-align: center;
             padding: 2rem;
             color: rgba(255, 255, 255, 0.6);
         }
-    </style>
-    <script>
-        // Global Free Streaming Hub functions
-        function startStreaming() {
-            alert('Welcome to Global Free Streaming Hub!\\n\\nEnjoy your cinematic streaming experience.');
-        }
         
-        function searchContent() {
-            const searchTerm = document.getElementById('searchInput').value.toLowerCase();
-            if (searchTerm.length > 0) {
-                document.getElementById('searchResults').style.display = 'block';
-                document.getElementById('searchResults').innerHTML = 'Search results for: ' + searchTerm;
-            }
+        .hidden {
+            display: none;
         }
-    </script>
+    </style>
 </head>
 <body>
     <div class="hero">
         <h1>GLOBAL STREAM HUB</h1>
-        <p>Experience the world's most advanced AI-powered streaming platform</p>
+        <p>Experience the world's most advanced AI-powered streaming platform with cinematic quality and global content discovery</p>
         <button class="cta-button" onclick="startStreaming()">START STREAMING NOW</button>
-    </div>
-    
-    <div class="features" id="features">
-        <div class="feature-card">
-            <div>8K CINEMATIC QUALITY</div>
-            <div>AI-POWERED DISCOVERY</div>
-            <div>GLOBAL CONTENT LIBRARY</div>
+        
+        <div class="search-container">
+            <input type="text" class="search-box" id="searchInput" placeholder="Search for movies, TV shows, or content..." onkeyup="searchContent(event)">
         </div>
     </div>
     
-    <div class="ai-agents" id="aiAgents">
+    <div class="features" id="featuresSection">
+        <div class="feature-card">
+            <h3>8K CINEMATIC QUALITY</h3>
+            <p>Experience streaming in true 8K resolution with Hollywood-grade production quality and immersive audio</p>
+        </div>
+        
+        <div class="feature-card">
+            <h3>AI-POWERED DISCOVERY</h3>
+            <p>Our neural network recommendation engine learns your preferences and discovers content you'll love</p>
+        </div>
+        
+        <div class="feature-card">
+            <h3>GLOBAL CONTENT LIBRARY</h3>
+            <p>Access content from over 200 countries with automatic language detection and translation</p>
+        </div>
+    </div>
+    
+    <div class="ai-agents" id="aiAgentsSection">
         <div class="agent-card">
             <h3>CONTENT CURATOR AI</h3>
             <p>Discovers and organizes global content based on your preferences</p>
         </div>
         <div class="agent-card">
             <h3>QUALITY ASSURANCE AI</h3>
-            <p>Ensures all content meets cinematic quality standards</p>
+            <p>Ensures all content meets our cinematic quality standards</p>
+        </div>
+        <div class="agent-card">
+            <h3>RECOMMENDATION AI</h3>
+            <p>Personalizes your viewing experience with machine learning</p>
+        </div>
+        <div class="agent-card">
+            <h3>TRANSLATION AI</h3>
+            <p>Provides real-time subtitle generation and translation</p>
         </div>
     </div>
     
-    <div id="searchResults" style="display: none;"></div>
+    <div id="searchResults" class="hidden">
+        <div class="content-grid" id="contentGrid">
+            <!-- Content will be dynamically loaded here -->
+        </div>
+    </div>
     
     <footer>
-        <p>© 2026 Global Free Streaming Hub</p>
+        <p>© 2026 Global Free Streaming Hub | The World's Most Advanced Streaming Platform</p>
     </footer>
+
+    <script>
+        // Initialize Hermes API Client
+        let hermesClient = new HermesApiClient();
+        
+        // Function to handle the start streaming button
+        function startStreaming() {
+            alert('Welcome to Global Free Streaming Hub!\n\nEnjoy your cinematic streaming experience powered by Hermes Agent.');
+        }
+        
+        // Search content function
+        function searchContent(event) {
+            // Only search when Enter key is pressed or after a delay
+            if (event.key === 'Enter' || event.type === 'keyup') {
+                const searchTerm = document.getElementById("searchInput").value.toLowerCase();
+                if (searchTerm.length > 2) {
+                    document.getElementById("searchResults").classList.remove("hidden");
+                    // In a real implementation, this would call hermesClient.searchContent(searchTerm)
+                    console.log("Hermes Agent searching for:", searchTerm);
+                }
+            }
+        }
+        
+        // Initialize when page loads
+        window.addEventListener('load', function() {
+            console.log("Global Free Streaming Hub initialized with Hermes Agent integration");
+        });
+    </script>
 </body>
 </html>

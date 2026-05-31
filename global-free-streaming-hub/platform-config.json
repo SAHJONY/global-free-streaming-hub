@@ -1,0 +1,49 @@
+{
+  "platform": "Global Free Streaming Hub",
+  "version": "2.0",
+  "backend": {
+    "name": "HermesAgentBackend",
+    "description": "Backend powered by Hermes Agent as the core engine",
+    "services": [
+      {
+        "name": "ContentDiscovery",
+        "engine": "HermesAgent",
+        "description": "AI-powered content discovery service"
+      },
+      {
+        "name": "RecommendationEngine",
+        "engine": "HermesAgent",
+        "description": "Neural network recommendation system"
+      },
+      {
+        "name": "UserPersonalization",
+        "engine": "HermesAgent",
+        "description": "User preference and behavior analysis"
+      }
+    ]
+  },
+  "frontend": {
+    "name": "GlobalFreeStreamingHubFrontend",
+    "description": "Frontend interface connected to Hermes Agent backend",
+    "api": {
+      "baseUrl": "http://localhost:3001/api",
+      "hermesIntegration": true
+    }
+  },
+  "hermes": {
+    "agent": {
+      "role": "Core Processing Engine",
+      "capabilities": [
+        "content_discovery",
+        "ai_recommendations",
+        "user_personalization",
+        "content_curation"
+      ],
+      "models": {
+        "primary": "gpt-4",
+        "backup": "claude-3",
+        "specialized": "llama-3"
+      }
+    }
+  }
+}

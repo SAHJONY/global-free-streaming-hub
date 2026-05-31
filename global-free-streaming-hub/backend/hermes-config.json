@@ -1,0 +1,56 @@
+{
+  "hermes": {
+    "agent": {
+      "name": "GlobalFreeStreamingHubAgent",
+      "version": "1.0.0",
+      "description": "Hermes Agent configuration for Global Free Streaming Hub",
+      "capabilities": [
+        "content_discovery",
+        "ai_recommendations",
+        "user_personalization",
+        "content_curation"
+      ],
+      "models": {
+        "recommendation_engine": "gpt-4",
+        "content_analysis": "claude-3",
+        "user_behavior": "llama-3"
+      }
+    },
+    "api": {
+      "baseUrl": "http://localhost:3001/api",
+      "endpoints": {
+        "health": "/health",
+        "hermesStatus": "/hermes/status",
+        "sendCommand": "/hermes/command",
+        "searchContent": "/content/search",
+        "aiRecommendations": "/ai/recommend"
+      }
+    },
+    "features": {
+      "content_discovery": {
+        "enabled": true,
+        "sources": [
+          "global_content_library",
+          "user_preferences",
+          "trending_content"
+        ]
+      },
+      "ai_recommendations": {
+        "enabled": true,
+        "algorithms": [
+          "neural_network",
+          "collaborative_filtering",
+          "content_based_filtering"
+        ]
+      },
+      "user_personalization": {
+        "enabled": true,
+        "features": [
+          "watch_history",
+          "preferences",
+          "search_behavior"
+        ]
+      }
+    }
+  }
+}
