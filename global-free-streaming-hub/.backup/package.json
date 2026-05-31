@@ -1,0 +1,14 @@
+{
+  "name": "Deployment Fix Tool",
+  "version": "1.0.0",
+  "description": "Tool to fix Vercel deployment issues for static sites",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "fix-deployment": "node fix-deployment.js",
+    "test": "node test.js"
+  },
+  "dependencies": {
+    "vercel": "^1.0.0"
+  }
+}
