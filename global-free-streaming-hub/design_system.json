@@ -1,0 +1,39 @@
+{
+  "project": "Global Free Streaming Hub",
+  "pattern": "Hero-Centric + Social Proof",
+  "conversion": "Emotion-driven with trust elements",
+  "sections": [
+    "Hero",
+    "Features",
+    "Testimonials",
+    "Content Library",
+    "Pricing",
+    "Contact"
+  ],
+  "style": "Dark Mode (OLED)",
+  "colors": {
+    "primary": "#0a0a1a",
+    "secondary": "#1a1a2e",
+    "cta": "#00cc99",
+    "background": "#000000",
+    "text": "#ffffff",
+    "accent": "#00aaff"
+  },
+  "typography": {
+    "primary": "Inter",
+    "secondary": "Roboto Slab",
+    "mood": "Modern, cinematic, sophisticated"
+  },
+  "effects": [
+    "Glassmorphism cards",
+    "Smooth transitions (200-300ms)",
+    "Parallax scrolling",
+    "Hover states with glow effects"
+  ],
+  "anti_patterns": [
+    "Bright backgrounds",
+    "Harsh animations",
+    "Light mode",
+    "AI purple/pink gradients"
+  ]
+}

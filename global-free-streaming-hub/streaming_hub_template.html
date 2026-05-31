@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Global Free Streaming Hub</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Roboto+Slab:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-dark: #0a0a1a;
+            --primary-darker: #1a1a2e;
+            --accent-green: #00cc99;
+            --accent-blue: #00aaff;
+            --text-light: #ffffff;
+            --text-gray: #aaaaaa;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--primary-dark);
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+        
+        .glass-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            padding: 2rem;
+            margin: 1rem 0;
+            transition: all 0.3s ease;
+        }
+        
+        .glass-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 204, 153, 0.2);
+        }
+        
+        .cta-button {
+            background: var(--accent-green);
+            color: var(--primary-dark);
+            border: none;
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .cta-button:hover {
+            background: var(--accent-blue);
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Global Free Streaming Hub</h1>
+    </header>
+    
+    <main>
+        <section class="glass-card">
+            <h2>Hero Section</h2>
+            <p>Experience the world's most advanced streaming platform</p>
+            <button class="cta-button">Start Streaming</button>
+        </section>
+        
+        <section class="glass-card">
+            <h2>Features</h2>
+            <ul>
+                <li>8K Cinematic Quality Streaming</li>
+                <li>AI-Powered Content Discovery</li>
+                <li>Global Content Library</li>
+                <li>Advanced Recommendation Engine</li>
+            </ul>
+        </section>
+    </main>
+</body>
+</html>

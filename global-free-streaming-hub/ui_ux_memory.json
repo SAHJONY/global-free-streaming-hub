@@ -1,0 +1,68 @@
+{
+  "ui_ux_memory": {
+    "project_context": {
+      "name": "Global Free Streaming Hub",
+      "version": "2.0",
+      "industry": "streaming",
+      "target_audience": "global_users"
+    },
+    "design_principles": {
+      "primary_style": "Dark Mode (OLED) with Glassmorphism",
+      "color_palette": {
+        "primary": "#0a0a1a",
+        "secondary": "#1a1a2e",
+        "cta": "#00cc99",
+        "background": "#000000",
+        "text": "#ffffff",
+        "accent": "#00aaff"
+      },
+      "typography": {
+        "primary_font": "Inter",
+        "secondary_font": "Roboto Slab",
+        "font_mood": "Modern, cinematic, sophisticated"
+      },
+      "ux_patterns": [
+        "Hero-Centric Design",
+        "Social Proof Integration",
+        "Emotion-driven Conversion",
+        "Above-fold CTAs",
+        "Parallax Scrolling"
+      ]
+    },
+    "anti_patterns": [
+      "Bright backgrounds",
+      "Harsh animations",
+      "Light mode",
+      "AI purple/pink gradients"
+    ],
+    "best_practices": [
+      "No emojis as icons (use SVG: Heroicons/Lucide)",
+      "cursor-pointer on all clickable elements",
+      "Hover states with smooth transitions (150-300ms)",
+      "Light mode: text contrast 4.5:1 minimum",
+      "Focus states visible for keyboard nav",
+      "prefers-reduced-motion respected",
+      "Responsive: 375px, 768px, 1024px, 1440px"
+    ],
+    "effects": [
+      "Glassmorphism cards",
+      "Smooth transitions (200-300ms)",
+      "Parallax scrolling",
+      "Hover states with glow effects"
+    ],
+    "sections": [
+      "Hero",
+      "Features",
+      "Testimonials",
+      "Content Library",
+      "Pricing",
+      "Contact"
+    ],
+    "previous_decisions": {
+      "dark_theme": "Selected for cinematic experience",
+      "glassmorphism": "Chosen for premium feel",
+      "electric_green_accent": "Used for CTAs and highlights",
+      "parallax_scrolling": "Implemented for immersive experience"
+    }
+  }
+}
