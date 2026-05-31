@@ -1,0 +1,45 @@
+{
+  "project": "Global Free Streaming Hub",
+  "resolution": "8K",
+  "design_principles": {
+    "glassmorphism": "backdrop-filter blur with rgba transparency",
+    "3d_effects": "translateZ transformations for depth",
+    "animations": "floating elements with smooth transitions",
+    "color_palette": {
+      "primary_dark": "#0a0a1a",
+      "primary_darker": "#000000",
+      "primary_light": "#1a1a2e",
+      "accent_neon_blue": "#00eeff",
+      "accent_neon_green": "#00ffaa",
+      "accent_purple": "#bf00ff",
+      "text_light": "#ffffff",
+      "text_gray": "#aaaaaa"
+    },
+    "typography": {
+      "primary_font": "Inter",
+      "secondary_font": "Roboto Slab",
+      "weights": [
+        300,
+        400,
+        500,
+        600,
+        700
+      ]
+    }
+  },
+  "components": [
+    "glass_cards",
+    "cta_buttons",
+    "feature_cards",
+    "stat_cards",
+    "hero_sections",
+    "floating_elements"
+  ],
+  "effects": [
+    "glassmorphism",
+    "3d_transformations",
+    "parallax_scrolling",
+    "neon_glow",
+    "floating_animations"
+  ]
+}

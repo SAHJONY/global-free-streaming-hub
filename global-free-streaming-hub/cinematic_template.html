@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Global Free Streaming Hub | 8K Cinematic Experience</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Roboto+Slab:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-dark: #0a0a1a;
+            --primary-darker: #000000;
+            --primary-light: #1a1a2e;
+            --accent-neon-blue: #00eeff;
+            --accent-neon-green: #00ffaa;
+            --accent-purple: #bf00ff;
+            --text-light: #ffffff;
+            --text-gray: #aaaaaa;
+            --glass-bg: rgba(255, 255, 255, 0.05);
+            --glass-border: rgba(255, 255, 255, 0.1);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, var(--primary-darker), var(--primary-light));
+            color: var(--text-light);
+            line-height: 1.6;
+            overflow-x: hidden;
+            min-height: 100vh;
+        }
+        
+        .cinematic-title {
+            font-family: 'Roboto Slab', serif;
+            font-size: 4rem;
+            font-weight: 700;
+            margin-bottom: 2rem;
+            background: linear-gradient(90deg, var(--accent-neon-green), var(--accent-neon-blue));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        
+        .glass-card {
+            background: var(--glass-bg);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid var(--glass-border);
+            border-radius: 24px;
+            padding: 3rem;
+            margin: 2rem 0;
+        }
+        
+        .cta-button {
+            background: linear-gradient(90deg, var(--accent-neon-green), var(--accent-neon-blue));
+            color: var(--primary-darker);
+            border: none;
+            padding: 16px 32px;
+            border-radius: 12px;
+            font-weight: 700;
+            font-size: 1.2rem;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="cinematic-container">
+        <section class="hero-section">
+            <div class="glass-card">
+                <h1 class="cinematic-title">Global Free Streaming Hub</h1>
+                <p>Experience the world's most advanced streaming platform with true 8K cinematic quality</p>
+                <button class="cta-button">Start Streaming in 8K</button>
+            </div>
+        </section>
+    </div>
+</body>
+</html>
