@@ -1,6 +1,5 @@
 import express from 'express';
 import cors from 'cors';
-import { spawn } from 'child_process';
 
 const app = express();
 const PORT = process.env.PORT || 3001;
@@ -10,70 +9,58 @@ app.use(cors());
 app.use(express.json());
 app.use(express.static('.'));
 
-// Hermes Agent integration
-class HermesAgentBridge {
-  constructor() {
-    this.agentProcess = null;
-  }
+// In-memory data store (in a real app, this would be a database)
+const contentData = [
+  { id: 1, title: "Global Adventure", type: "Movie", year: 2026, region: "Global", description: "Experience a cinematic journey around the world" },
+  { id: 2, title: "Tech Revolution", type: "Documentary", year: 2025, region: "USA", description: "Explore the latest technological innovations" },
+  { id: 3, title: "Cultural Journey", type: "Series", year: 2026, region: "Europe", description: "Discover diverse cultures from across Europe" },
+  { id: 4, title: "Future World", type: "Movie", year: 2027, region: "Asia", description: "A glimpse into tomorrow's possibilities" }
+];
 
-  // Initialize Hermes Agent
-  async initializeAgent() {
-    try {
-      console.log('Initializing Hermes Agent...');
-      // In a real implementation, this would connect to Hermes Agent
-      return { status: 'connected', agent: 'Hermes Agent v0.15.1' };
-    } catch (error) {
-      console.error('Failed to initialize Hermes Agent:', error);
-      return { status: 'error', message: error.message };
-    }
-  }
-
-  // Send command to Hermes Agent
-  async sendCommand(command) {
-    try {
-      // In a real implementation, this would send commands to Hermes Agent
-      console.log(`Sending command to Hermes Agent: ${command}`);
-      return { 
-        status: 'success', 
-        command: command,
-        result: `Hermes Agent processed: ${command}`
-      };
-    } catch (error) {
-      console.error('Error sending command to Hermes Agent:', error);
-      return { status: 'error', message: error.message };
-    }
-  }
-}
-
-// Initialize Hermes Agent bridge
-const hermesBridge = new HermesAgentBridge();
+const aiAgents = [
+  { name: "Content Curator AI", description: "Discovers and organizes global content based on your preferences" },
+  { name: "Quality Assurance AI", description: "Ensures all content meets our cinematic quality standards" },
+  { name: "Recommendation AI", description: "Personalizes your viewing experience with machine learning" },
+  { name: "Translation AI", description: "Provides real-time subtitle generation and translation" }
+];
 
 // Routes
 app.get('/api/health', (req, res) => {
   res.json({ 
     status: 'healthy', 
     service: 'Global Free Streaming Hub Backend',
-    hermes: 'Hermes Agent v0.15.1',
     timestamp: new Date().toISOString()
   });
 });
 
-app.get('/api/hermes/status', async (req, res) => {
-  const status = await hermesBridge.initializeAgent();
-  res.json(status);
-});
-
-app.post('/api/hermes/command', async (req, res) => {
-  const { command } = req.body;
-  if (!command) {
-    return res.status(400).json({ error: 'Command is required' });
+app.get('/api/search', (req, res) => {
+  const { query } = req.query;
+  if (!query) {
+    return res.json({ results: contentData, total: contentData.length });
   }
   
-  const result = await hermesBridge.sendCommand(command);
-  res.json(result);
+  const filteredContent = contentData.filter(item => 
+    item.title.toLowerCase().includes(query.toLowerCase()) ||
+    item.type.toLowerCase().includes(query.toLowerCase()) ||
+    item.region.toLowerCase().includes(query.toLowerCase())
+  );
+  
+  res.json({ results: filteredContent, total: filteredContent.length });
+});
+
+app.get('/api/ai-agents', (req, res) => {
+  res.json({ agents: aiAgents });
+});
+
+app.get('/api/recommendations', (req, res) => {
+  // In a real implementation, this would use Hermes Agent or FreeLLMAPI
+  res.json({ 
+    recommendations: contentData.slice(0, 3),
+    algorithm: "Hermes Agent Recommendation Engine"
+  });
 });
 
 // Start server
 app.listen(PORT, '0.0.0.0', () => {
-  console.log(`Global Free Streaming Hub Backend running with Hermes Agent on port ${PORT}`);
+  console.log(`Global Free Streaming Hub Backend running on port ${PORT}`);
 });

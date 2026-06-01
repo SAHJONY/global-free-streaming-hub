@@ -1,7 +1,7 @@
 {
   "name": "global-free-streaming-hub-backend",
   "version": "1.0.0",
-  "description": "Backend for Global Free Streaming Hub powered by Hermes Agent",
+  "description": "Backend for Global Free Streaming Hub",
   "main": "server.js",
   "type": "module",
   "scripts": {
@@ -10,8 +10,7 @@
   },
   "dependencies": {
     "express": "^4.18.2",
-    "cors": "^2.8.5",
-    "dotenv": "^16.0.3",
-    "hermes-agent": "^0.15.1"
-  }
+    "cors": "^2.8.5"
+  },
+  "devDependencies": {}
 }
