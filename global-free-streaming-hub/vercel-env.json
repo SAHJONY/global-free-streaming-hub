@@ -1,0 +1,10 @@
+{
+  "vercel": {
+    "env": {
+      "OPENAI_API_KEY": "sk-...your-api-key-here",
+      "HERMES_AGENT_KEY": "ha-...your-hermes-key-here",
+      "SESSION_SECRET": "your-session-secret-here",
+      "FREE_LLMAPI_KEY": "sk-...your-freellmapi-key-here"
+    }
+  }
+}

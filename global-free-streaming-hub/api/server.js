@@ -1,10 +1,14 @@
 import express from 'express';
 import cors from 'cors';
+import { config } from 'dotenv';
 import { fileURLToPath } from 'url';
 import { dirname } from 'path';
 
 const app = express();
 const PORT = process.env.PORT || 3000;
+
+// Load environment variables
+config();
 
 // Middleware
 app.use(cors());
@@ -26,7 +30,14 @@ const aiAgents = [
   { name: "Translation AI", description: "Provides real-time subtitle generation and translation" }
 ];
 
-// Health check endpoint
+const aiAgentsData = [
+  { name: "Content Discovery", description: "Discovers and organizes global content based on your preferences" },
+  { name: "Quality Assurance", description: "Ensures all content meets our cinematic quality standards" },
+  { name: "Recommendation Engine", description: "Personalizes your viewing experience with machine learning" },
+  { name: "Translation Service", description: "Provides real-time subtitle generation and translation" }
+];
+
+// Routes
 app.get('/api/health', (req, res) => {
   res.json({ 
     status: 'healthy', 
@@ -35,7 +46,6 @@ app.get('/api/health', (req, res) => {
   });
 });
 
-// Search content endpoint
 app.get('/api/search', (req, res) => {
   const { query } = req.query;
   if (!query) {
@@ -51,21 +61,19 @@ app.get('/api/search', (req, res) => {
   res.json({ results: filteredContent, total: filteredContent.length });
 });
 
-// Get AI agents
 app.get('/api/ai-agents', (req, res) => {
   res.json({ agents: aiAgents });
 });
 
-// Get recommendations
 app.get('/api/recommendations', (req, res) => {
-  // In a real implementation, this would use FreeLLMAPI
+  // In a real implementation, this would use Hermes Agent or FreeLLMAPI
   res.json({ 
     recommendations: contentData.slice(0, 3),
-    algorithm: "FreeLLMAPI Recommendation Engine"
+    algorithm: "Hermes Agent Recommendation Engine"
   });
 });
 
 // Start server
 app.listen(PORT, '0.0.0.0', () => {
-  console.log(`Global Free Streaming Hub API running on port ${PORT}`);
+  console.log(`Global Free Streaming Hub Backend running on port ${PORT}`);
 });
