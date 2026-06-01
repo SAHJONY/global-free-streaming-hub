@@ -1,0 +1,3 @@
+[submodule "global-free-streaming-hub/freellmapi"]
+	path = global-free-streaming-hub/freellmapi
+	url = https://github.com/tashfeenahmed/freellmapi.git
