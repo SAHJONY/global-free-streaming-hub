@@ -1,0 +1,47 @@
+{
+  "platform": "Global Free Streaming Hub",
+  "version": "2.0",
+  "backend": {
+    "name": "HermesAgentBackendWithFreeLLMAPI",
+    "description": "Backend powered by Hermes Agent and FreeLLMAPI as the core engine",
+    "services": [
+      {
+        "name": "ContentDiscovery",
+        "engine": "FreeLLMAPI",
+        "description": "AI-powered content discovery service using FreeLLMAPI"
+      },
+      {
+        "name": "RecommendationEngine", 
+        "engine": "FreeLLMAPI",
+        "description": "Neural network recommendation system powered by FreeLLMAPI"
+      }
+    ]
+  },
+  "frontend": {
+    "name": "GlobalFreeStreamingHubFrontend",
+    "description": "Frontend interface connected to Hermes Agent backend with FreeLLMAPI integration",
+    "api": {
+      "baseUrl": "http://localhost:3001",
+      "hermesIntegration": true
+    }
+  },
+  "freellmapi": {
+    "integration": {
+      "status": "enabled",
+      "providers": [
+        "google",
+        "groq",
+        "cerebras", 
+        "sambanova",
+        "nvidia",
+        "mistral",
+        "openrouter",
+        "github",
+        "cohere",
+        "cloudflare",
+        "huggingface",
+        "zhipu"
+      ]
+    }
+  }
+}

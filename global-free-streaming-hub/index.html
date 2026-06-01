@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Global Free Streaming Hub</title>
-    <script src="frontend/js/hermes-client.js"></script>
+    <script src="frontend/js/freellmapi-client.js"></script>
     <style>
         :root {
             --primary-dark: #0a0a1a;
@@ -169,12 +169,12 @@
     </footer>
 
     <script>
-        // Initialize Hermes API Client
-        let hermesClient = new HermesApiClient();
+        // Initialize FreeLLMAPI client
+        let freeLLMAPIClient = new FreeLLMAPIClient();
         
         // Function to handle the start streaming button
         function startStreaming() {
-            alert('Welcome to Global Free Streaming Hub!\n\nEnjoy your cinematic streaming experience powered by Hermes Agent.');
+            alert('Welcome to Global Free Streaming Hub!\\n\\nEnjoy your cinematic streaming experience powered by FreeLLMAPI.');
         }
         
         // Search content function
@@ -184,15 +184,14 @@
                 const searchTerm = document.getElementById("searchInput").value.toLowerCase();
                 if (searchTerm.length > 2) {
                     document.getElementById("searchResults").classList.remove("hidden");
-                    // In a real implementation, this would call hermesClient.searchContent(searchTerm)
-                    console.log("Hermes Agent searching for:", searchTerm);
+                    console.log("FreeLLMAPI searching for:", searchTerm);
                 }
             }
         }
         
         // Initialize when page loads
         window.addEventListener('load', function() {
-            console.log("Global Free Streaming Hub initialized with Hermes Agent integration");
+            console.log("Global Free Streaming Hub initialized with FreeLLMAPI integration");
         });
     </script>
 </body>

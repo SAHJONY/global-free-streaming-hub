@@ -1,5 +1,6 @@
 const express = require('express');
 const cors = require('cors');
+const { spawn } = require('child_process');
 
 const app = express();
 const PORT = process.env.PORT || 3001;
@@ -29,6 +30,7 @@ class FreeLLMAPIBridge {
   async sendToFreeLLMAPI(prompt, model) {
     try {
       console.log(`Sending request to FreeLLMAPI: ${prompt}`);
+      // In a real implementation, this would send requests to FreeLLMAPI
       return { 
         status: 'success', 
         response: `FreeLLMAPI processed: ${prompt}`
