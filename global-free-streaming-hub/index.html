@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Global Free Streaming Hub</title>
-    <script src="frontend/js/freellmapi-client.js"></script>
+    <script src="frontend/js/hermes-client.js"></script>
     <style>
         :root {
             --primary-dark: #0a0a1a;
@@ -29,8 +29,6 @@
             background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary-light) 100%);
             color: var(--text-light);
             min-height: 100vh;
-            margin: 0;
-            padding: 0;
         }
         
         .hero {
@@ -169,29 +167,29 @@
     </footer>
 
     <script>
-        // Initialize FreeLLMAPI client
-        let freeLLMAPIClient = new FreeLLMAPIClient();
+        // Initialize Hermes API Client
+        let hermesClient = new HermesApiClient();
         
         // Function to handle the start streaming button
         function startStreaming() {
-            alert('Welcome to Global Free Streaming Hub!\\n\\nEnjoy your cinematic streaming experience powered by FreeLLMAPI.');
+            alert('Welcome to Global Free Streaming Hub!\n\nEnjoy your cinematic streaming experience powered by Hermes Agent.');
         }
         
         // Search content function
         function searchContent(event) {
-            // Only search when Enter key is pressed or after a delay
             if (event.key === 'Enter' || event.type === 'keyup') {
                 const searchTerm = document.getElementById("searchInput").value.toLowerCase();
                 if (searchTerm.length > 2) {
                     document.getElementById("searchResults").classList.remove("hidden");
-                    console.log("FreeLLMAPI searching for:", searchTerm);
+                    // In a real implementation, this would call hermesClient.searchContent(searchTerm)
+                    console.log("Hermes Agent searching for:", searchTerm);
                 }
             }
         }
         
         // Initialize when page loads
         window.addEventListener('load', function() {
-            console.log("Global Free Streaming Hub initialized with FreeLLMAPI integration");
+            console.log("Global Free Streaming Hub initialized with Hermes Agent integration");
         });
     </script>
 </body>

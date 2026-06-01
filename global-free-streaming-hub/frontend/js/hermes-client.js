@@ -1,4 +1,4 @@
-// Hermes API Client for Global Free Streaming Hub
+// Hermes API client for Global Free Streaming Hub
 class HermesApiClient {
   constructor() {
     this.baseUrl = 'http://localhost:3001';
@@ -6,29 +6,46 @@ class HermesApiClient {
 
   async searchContent(query) {
     try {
-      // In a real implementation, this would call the backend API
-      console.log('Searching content:', query);
-      return {
-        results: [
-          { id: 1, title: 'Sample Result 1' },
-          { id: 2, title: 'Sample Result 2' }
-        ],
-        total: 2
-      };
+      const response = await fetch(`${this.baseUrl}/api/search?query=${encodeURIComponent(query)}`);
+      return await response.json();
     } catch (error) {
-      console.error('Error in searchContent:', error);
+      console.error('Error searching content:', error);
       return { error: error.message };
     }
   }
 
-  async getRecommendations(userId) {
-    // Simulate AI recommendations
-    return {
-      recommendations: [
-        { id: 1, title: 'Recommended Content 1', score: 0.95 },
-        { id: 2, title: 'Recommended Content 2', score: 0.89 }
-      ]
-    };
+  async getAIRecommendations() {
+    try {
+      const response = await fetch(`${this.baseUrl}/api/recommendations`);
+      return await response.json();
+    } catch (error) {
+      console.error('Error getting recommendations:', error);
+      return { error: error.message };
+    }
+  }
+
+  async getAIAgents() {
+    try {
+      const response = await fetch(`${this.baseUrl}/api/ai-agents`);
+      return await response.json();
+    } catch (error) {
+      console.error('Error getting AI agents:', error);
+      return { error: error.message };
+    }
+  }
+
+  async sendHermesCommand(command) {
+    try {
+      const response = await fetch(`${this.baseUrl}/api/hermes/command`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ command: command })
+      });
+      return await response.json();
+    } catch (error) {
+      console.error('Error sending Hermes command:', error);
+      return { error: error.message };
+    }
   }
 }
 
